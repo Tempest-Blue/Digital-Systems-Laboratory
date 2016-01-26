@@ -1,0 +1,6 @@
+Warning (10236): Verilog HDL Implicit Net warning at L2C268.v(9): created implicit net for "init"
+Warning (10236): Verilog HDL Implicit Net warning at L2C268.v(10): created implicit net for "part1"
+Warning (10236): Verilog HDL Implicit Net warning at L2C268.v(11): created implicit net for "part2"
+Warning (10236): Verilog HDL Implicit Net warning at L2C268.v(12): created implicit net for "part3"
+Warning (10236): Verilog HDL Implicit Net warning at L2C268.v(13): created implicit net for "part4"
+Warning (10236): Verilog HDL Implicit Net warning at L2C268.v(14): created implicit net for "part5"

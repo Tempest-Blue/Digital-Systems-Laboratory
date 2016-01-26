@@ -1,0 +1,11 @@
+GED
+
+	Undo Commands
+	     1.	Insert Node
+	     2.	Insert Symbol
+	     3.	Move
+	     4.	Move
+	     5.	Properties
+	     6.	Insert Symbol
+
+

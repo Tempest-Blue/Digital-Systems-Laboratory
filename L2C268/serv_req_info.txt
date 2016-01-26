@@ -1,0 +1,15 @@
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>LOGDB</sub_system>
+	<file>/quartus/db/logdb/logdb_database.cpp</file>
+	<line>1491</line>
+	<callstack>
+	0x04603155: synth_jvgen + 0x45fb155 (elaborate + 0x45f7c85)
+	</callstack>
+	<error>failed copying logdb file</error>
+	<date>Tue Apr 29 00:42:27 2014</date>
+	<version>Quartus II Version 7.2 Build 151 09/26/2007 SJ Web Edition</version>
+	<full_error>failed copying logdb file
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Web Edition </full_error>
+</internal_error>
+

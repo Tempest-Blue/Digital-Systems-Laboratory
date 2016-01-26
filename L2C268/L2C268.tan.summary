@@ -1,0 +1,96 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.098 ns
+From           : sw[5]
+To             : m0[2]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.842 ns
+From           : h3[2]
+To             : hex3[2]
+From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.277 ns
+From           : sw[8]
+To             : hex3[2]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.522 ns
+From           : sw[3]
+To             : hex3[4]$latch
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 112.64 MHz ( period = 8.878 ns )
+From           : clockIndex2[4]
+To             : m1[3]
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'key[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 175.93 MHz ( period = 5.684 ns )
+From           : counter[2]
+To             : counter[4]
+From Clock     : key[2]
+To Clock       : key[2]
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clock'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : m1[4]
+To             : hex1[1]$latch
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 240
+
+Type           : Clock Hold: 'key[2]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter[0]
+To             : hex2[5]$latch
+From Clock     : key[2]
+To Clock       : key[2]
+Failed Paths   : 34
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 274
+
+--------------------------------------------------------------------------------------
+

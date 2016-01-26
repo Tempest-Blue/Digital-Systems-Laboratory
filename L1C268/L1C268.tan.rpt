@@ -1,0 +1,130 @@
+Classic Timing Analyzer report for L1C268
+Tue Apr 15 12:22:40 2014
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. tpd
+  5. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                      ;
++------------------------------+----------+---------------+-------------+------+--------+------------+----------+--------------+
+; Type                         ; Slack    ; Required Time ; Actual Time ; From ; To     ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+----------+---------------+-------------+------+--------+------------+----------+--------------+
+; Worst-case tpd               ; 0.571 ns ; 8.000 ns      ; 7.429 ns    ; SW1  ; HEX0_3 ; --         ; --       ; 0            ;
+; Total number of failed paths ;          ;               ;             ;      ;        ;            ;          ; 0            ;
++------------------------------+----------+---------------+-------------+------+--------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; tpd Requirement                                                ; 8 ns               ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++----------------------------------------------------------------+
+; tpd                                                            ;
++----------+-------------------+-----------------+------+--------+
+; Slack    ; Required P2P Time ; Actual P2P Time ; From ; To     ;
++----------+-------------------+-----------------+------+--------+
+; 0.571 ns ; 8.000 ns          ; 7.429 ns        ; SW1  ; HEX0_3 ;
+; 0.628 ns ; 8.000 ns          ; 7.372 ns        ; SW0  ; HEX0_5 ;
+; 0.715 ns ; 8.000 ns          ; 7.285 ns        ; SW1  ; HEX0_5 ;
+; 0.720 ns ; 8.000 ns          ; 7.280 ns        ; SW0  ; HEX0_2 ;
+; 0.753 ns ; 8.000 ns          ; 7.247 ns        ; SW0  ; HEX0_3 ;
+; 0.839 ns ; 8.000 ns          ; 7.161 ns        ; SW1  ; HEX0_2 ;
+; 0.937 ns ; 8.000 ns          ; 7.063 ns        ; SW1  ; HEX0_0 ;
+; 1.119 ns ; 8.000 ns          ; 6.881 ns        ; SW0  ; HEX0_0 ;
+; 1.203 ns ; 8.000 ns          ; 6.797 ns        ; SW0  ; Hex3_2 ;
+; 1.367 ns ; 8.000 ns          ; 6.633 ns        ; SW0  ; Hex3_6 ;
+; 1.367 ns ; 8.000 ns          ; 6.633 ns        ; SW0  ; Hex2_6 ;
+; 1.378 ns ; 8.000 ns          ; 6.622 ns        ; SW0  ; HEX0_4 ;
+; 1.415 ns ; 8.000 ns          ; 6.585 ns        ; SW0  ; Hex2_1 ;
+; 1.472 ns ; 8.000 ns          ; 6.528 ns        ; SW0  ; LEDR4  ;
+; 1.490 ns ; 8.000 ns          ; 6.510 ns        ; SW1  ; HEX0_6 ;
+; 1.638 ns ; 8.000 ns          ; 6.362 ns        ; SW1  ; LEDR4  ;
+; 1.725 ns ; 8.000 ns          ; 6.275 ns        ; SW0  ; Hex1_6 ;
+; 1.745 ns ; 8.000 ns          ; 6.255 ns        ; SW0  ; Hex3_5 ;
+; 1.771 ns ; 8.000 ns          ; 6.229 ns        ; SW2  ; LEDR4  ;
+; 1.927 ns ; 8.000 ns          ; 6.073 ns        ; SW0  ; LEDR1  ;
+; 1.983 ns ; 8.000 ns          ; 6.017 ns        ; SW0  ; LEDR8  ;
+; 2.121 ns ; 8.000 ns          ; 5.879 ns        ; SW1  ; LEDR1  ;
+; 2.181 ns ; 8.000 ns          ; 5.819 ns        ; SW1  ; LEDR8  ;
+; 2.257 ns ; 8.000 ns          ; 5.743 ns        ; SW2  ; LEDR1  ;
+; 2.322 ns ; 8.000 ns          ; 5.678 ns        ; SW2  ; LEDR8  ;
++----------+-------------------+-----------------+------+--------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Web Edition
+    Info: Processing started: Tue Apr 15 12:22:40 2014
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off L1C268 -c L1C268 --timing_analysis_only
+Info: Slack time is 571 ps between source pin "SW1" and destination pin "HEX0_3"
+    Info: + Longest pin to pin requirement is 8.000 ns
+    Info: - Longest pin to pin delay is 7.429 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L21; Fanout = 7; PIN Node = 'SW1'
+        Info: 2: + IC(2.376 ns) + CELL(0.322 ns) = 3.724 ns; Loc. = LCCOMB_X1_Y18_N4; Fanout = 2; COMB Node = 'inst31~30'
+        Info: 3: + IC(0.865 ns) + CELL(2.840 ns) = 7.429 ns; Loc. = PIN_H1; Fanout = 0; PIN Node = 'HEX0_3'
+        Info: Total cell delay = 4.188 ns ( 56.37 % )
+        Info: Total interconnect delay = 3.241 ns ( 43.63 % )
+Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Allocated 160 megabytes of memory during processing
+    Info: Processing ended: Tue Apr 15 12:22:40 2014
+    Info: Elapsed time: 00:00:00
+
+

@@ -1,0 +1,5 @@
+
+State Machine - |L3C268|reset
+Name reset.01 
+reset.00 0 
+reset.01 1 

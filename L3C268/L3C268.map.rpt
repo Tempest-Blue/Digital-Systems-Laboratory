@@ -1,0 +1,572 @@
+Analysis & Synthesis report for L3C268
+Tue May 20 11:26:51 2014
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |L3C268|reset
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 20 11:26:51 2014   ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Web Edition ;
+; Revision Name                      ; L3C268                                  ;
+; Top-level Entity Name              ; L3C268                                  ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 547                                     ;
+;     Total combinational functions  ; 547                                     ;
+;     Dedicated logic registers      ; 61                                      ;
+; Total registers                    ; 61                                      ;
+; Total pins                         ; 61                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                          ; L3C268             ; L3C268             ;
+; Family name                                                                    ; Cyclone II         ; Cyclone IV GX      ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 5000               ; 5000               ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; L3C268.v                         ; yes             ; User Verilog HDL File        ; E:/My Documents/DropBox/CSE 140L/L3C268/L3C268.v                   ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; e:/altera/quartus/libraries/megafunctions/lpm_divide.tdf           ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; e:/altera/quartus/libraries/megafunctions/abs_divider.inc          ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; e:/altera/quartus/libraries/megafunctions/sign_div_unsign.inc      ;
+; aglobal72.inc                    ; yes             ; Megafunction                 ; e:/altera/quartus/libraries/megafunctions/aglobal72.inc            ;
+; db/lpm_divide_35m.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/My Documents/DropBox/CSE 140L/L3C268/db/lpm_divide_35m.tdf      ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/My Documents/DropBox/CSE 140L/L3C268/db/sign_div_unsign_akh.tdf ;
+; db/alt_u_div_mve.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/My Documents/DropBox/CSE 140L/L3C268/db/alt_u_div_mve.tdf       ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/My Documents/DropBox/CSE 140L/L3C268/db/add_sub_lkc.tdf         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/My Documents/DropBox/CSE 140L/L3C268/db/add_sub_mkc.tdf         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 547          ;
+;                                             ;              ;
+; Total combinational functions               ; 547          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 276          ;
+;     -- 3 input functions                    ; 113          ;
+;     -- <=2 input functions                  ; 158          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 443          ;
+;     -- arithmetic mode                      ; 104          ;
+;                                             ;              ;
+; Total registers                             ; 61           ;
+;     -- Dedicated logic registers            ; 61           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 61           ;
+; Maximum fan-out node                        ; deposit~2749 ;
+; Maximum fan-out                             ; 41           ;
+; Total fan-out                               ; 1932         ;
+; Average fan-out                             ; 2.89         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; |L3C268                                ; 547 (455)         ; 61 (61)      ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |L3C268                                                                                                 ; work         ;
+;    |lpm_divide:Mod0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod0                                                                                 ; work         ;
+;       |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod0|lpm_divide_35m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
+;             |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod0|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ; work         ;
+;    |lpm_divide:Mod1|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod1                                                                                 ; work         ;
+;       |lpm_divide_35m:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod1|lpm_divide_35m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod1|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
+;             |alt_u_div_mve:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |L3C268|lpm_divide:Mod1|lpm_divide_35m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------+
+; State Machine - |L3C268|reset ;
++----------+--------------------+
+; Name     ; reset.01           ;
++----------+--------------------+
+; reset.00 ; 0                  ;
+; reset.01 ; 1                  ;
++----------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; hex0[0]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex0[1]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex0[2]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex0[3]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex0[4]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex0[5]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex0[6]$latch                                       ; hex0[0]~21          ; yes                    ;
+; hex1[0]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex1[1]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex1[2]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex1[3]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex1[4]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex1[5]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex1[6]$latch                                       ; hex1[0]~22          ; yes                    ;
+; hex2[0]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex2[1]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex2[2]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex2[3]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex2[4]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex2[5]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex2[6]$latch                                       ; hex2[6]~7           ; yes                    ;
+; hex3[0]$latch                                       ; hex3[0]~21          ; yes                    ;
+; hex3[1]$latch                                       ; hex3[0]~21          ; yes                    ;
+; hex3[2]$latch                                       ; hex3[0]~21          ; yes                    ;
+; hex3[3]$latch                                       ; hex3[0]~21          ; yes                    ;
+; hex3[4]$latch                                       ; hex3[0]~21          ; yes                    ;
+; hex3[5]$latch                                       ; hex3[0]~21          ; yes                    ;
+; hex3[6]$latch                                       ; hex3[0]~21          ; yes                    ;
+; Number of user-specified and inferred latches = 28  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; ledGreen[0..6]                        ; Merged with ledGreen[7]                ;
+; errorCase[1]                          ; Stuck at GND due to stuck port data_in ;
+; reset~137                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 61    ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 7     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |L3C268|errorCase[1]         ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |L3C268|clockIndex[22]       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |L3C268|count[5]             ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |L3C268|deposit[1]           ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |L3C268|change[1]            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |L3C268|consecutiveDollar[1] ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |L3C268|consecutiveCredit[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |L3C268|hex3[6]~0            ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |L3C268|hex3[4]~2            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |L3C268|deposit~16           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |L3C268|state~4              ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |L3C268|hex0[0]~20           ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |L3C268|deposit~60           ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |L3C268|change~62            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |L3C268|errorCase~19         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_35m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Web Edition
+    Info: Processing started: Tue May 20 11:26:48 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off L3C268 -c L3C268
+Info: Found 1 design units, including 1 entities, in source file L3C268.v
+    Info: Found entity 1: L3C268
+Info: Elaborating entity "L3C268" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at L3C268.v(34): object "creditInput" assigned a value but never read
+Warning (10270): Verilog HDL Case Statement warning at L3C268.v(248): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at L3C268.v(192): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at L3C268.v(164): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at L3C268.v(29): inferring latch(es) for variable "hex3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at L3C268.v(29): inferring latch(es) for variable "hex2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at L3C268.v(29): inferring latch(es) for variable "hex1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at L3C268.v(29): inferring latch(es) for variable "hex0", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at L3C268.v(43): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(70): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(76): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(82): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(88): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(89): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(96): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(97): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(115): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(121): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(139): truncated value with size 32 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at L3C268.v(143): truncated value with size 32 to match size of target (7)
+Warning (10034): Output port "ledr[9]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[8]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[7]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[6]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[5]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[4]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[3]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[2]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[1]" at L3C268.v(5) has no driver
+Warning (10034): Output port "ledr[0]" at L3C268.v(5) has no driver
+Info (10041): Inferred latch for "hex0[0]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex0[1]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex0[2]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex0[3]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex0[4]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex0[5]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex0[6]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[0]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[1]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[2]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[3]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[4]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[5]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex1[6]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[0]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[1]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[2]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[3]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[4]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[5]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex2[6]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[0]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[1]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[2]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[3]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[4]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[5]" at L3C268.v(20)
+Info (10041): Inferred latch for "hex3[6]" at L3C268.v(20)
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "ledGreen[6]" merged to single register "ledGreen[7]"
+    Info: Duplicate register "ledGreen[2]" merged to single register "ledGreen[7]"
+    Info: Duplicate register "ledGreen[0]" merged to single register "ledGreen[7]"
+    Info: Duplicate register "ledGreen[3]" merged to single register "ledGreen[7]"
+    Info: Duplicate register "ledGreen[1]" merged to single register "ledGreen[7]"
+    Info: Duplicate register "ledGreen[5]" merged to single register "ledGreen[7]"
+    Info: Duplicate register "ledGreen[4]" merged to single register "ledGreen[7]"
+Warning (14130): Reduced register "errorCase[1]" with stuck data_in port to stuck value GND
+Info: State machine "|L3C268|reset" contains 2 states
+Info: Selected Auto state machine encoding method for state machine "|L3C268|reset"
+Info: Encoding result for state machine "|L3C268|reset"
+    Info: Completed encoding using 1 state bits
+        Info: Encoded state bit "reset.01"
+    Info: State "|L3C268|reset.00" uses code string "0"
+    Info: State "|L3C268|reset.01" uses code string "1"
+Info: Inferred 2 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+Info: Found 1 design units, including 1 entities, in source file ../../../../altera/quartus/libraries/megafunctions/lpm_divide.tdf
+    Info: Found entity 1: lpm_divide
+Info: Elaborated megafunction instantiation "lpm_divide:Mod1"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_35m.tdf
+    Info: Found entity 1: lpm_divide_35m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info: Found entity 1: sign_div_unsign_akh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_mve.tdf
+    Info: Found entity 1: alt_u_div_mve
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info: Found entity 1: add_sub_lkc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info: Found entity 1: add_sub_mkc
+Warning: Latch hex0[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex0[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex0[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex0[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex0[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex0[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex0[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal state[0]
+Warning: Latch hex1[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex1[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal errorCase[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex1[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex1[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex1[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex1[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex1[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal state[0]
+Warning: Latch hex2[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex2[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex2[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex2[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex2[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex2[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex2[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal state[0]
+Warning: Latch hex3[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex3[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex3[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex3[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex3[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex3[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state[0]
+Warning: Latch hex3[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal sw[9]
+    Warning: Ports ENA and PRE on the latch are fed by the same signal state[0]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledr[0]" stuck at GND
+    Warning (13410): Pin "ledr[1]" stuck at GND
+    Warning (13410): Pin "ledr[2]" stuck at GND
+    Warning (13410): Pin "ledr[3]" stuck at GND
+    Warning (13410): Pin "ledr[4]" stuck at GND
+    Warning (13410): Pin "ledr[5]" stuck at GND
+    Warning (13410): Pin "ledr[6]" stuck at GND
+    Warning (13410): Pin "ledr[7]" stuck at GND
+    Warning (13410): Pin "ledr[8]" stuck at GND
+    Warning (13410): Pin "ledr[9]" stuck at GND
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "reset~137" lost all its fanouts during netlist optimizations.
+Warning: Ignored assignments for entity "L2C268" -- entity does not exist in design
+    Warning: Assignment of entity set_instance_assignment -name PARTITION_HIERARCHY no_file_for_top_partition -to | -entity L2C268 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity L2C268 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity L2C268 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity L2C268 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity L2C268 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity L2C268 -section_id Top is ignored
+    Warning: Assignment of entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity L2C268 -section_id Top is ignored
+Info: Generated suppressed messages file E:/My Documents/DropBox/CSE 140L/L3C268/L3C268.map.smsg
+Warning: Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[5]"
+    Warning (15610): No output dependent on input pin "sw[6]"
+    Warning (15610): No output dependent on input pin "sw[7]"
+    Warning (15610): No output dependent on input pin "key[0]"
+    Warning (15610): No output dependent on input pin "key[2]"
+    Warning (15610): No output dependent on input pin "key[3]"
+Info: Implemented 610 device resources after synthesis - the final resource count might be different
+    Info: Implemented 15 input pins
+    Info: Implemented 46 output pins
+    Info: Implemented 549 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 141 warnings
+    Info: Allocated 192 megabytes of memory during processing
+    Info: Processing ended: Tue May 20 11:26:51 2014
+    Info: Elapsed time: 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/My Documents/DropBox/CSE 140L/L3C268/L3C268.map.smsg.
+
+

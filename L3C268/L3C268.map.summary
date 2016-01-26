@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue May 20 11:26:51 2014
+Quartus II Version : 7.2 Build 151 09/26/2007 SJ Web Edition
+Revision Name : L3C268
+Top-level Entity Name : L3C268
+Family : Cyclone II
+Total logic elements : 547
+    Total combinational functions : 547
+    Dedicated logic registers : 61
+Total registers : 61
+Total pins : 61
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

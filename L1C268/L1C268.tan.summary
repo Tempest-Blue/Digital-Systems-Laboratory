@@ -1,0 +1,26 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tpd
+Slack          : 0.571 ns
+Required Time  : 8.000 ns
+Actual Time    : 7.429 ns
+From           : SW1
+To             : HEX0_3
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
